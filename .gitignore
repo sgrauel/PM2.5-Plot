@@ -11,3 +11,8 @@
 # produced vignettes
 vignettes/*.html
 vignettes/*.pdf
+
+# exclude data
+exdata_data_NEI_data.zip
+Source_Classification_Code.rds
+summarySCC_PM25.rds
