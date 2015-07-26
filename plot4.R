@@ -15,6 +15,9 @@ makePlot4 <- function() {
   # filter for all observations who are coal-combusion related sources
   mergedNEIandSCC <- mergedNEIandSCC %>% filter(grepl(glob2rx("Fuel Comb - * - Coal"),EI.Sector))
   
+  # make year factor variable
+  mergedNEIandSCC <- mergedNEIandSCC %>% mutate(year=factor(year))
+  
   library(ggplot2)
   
   plt <- qplot(year, Emissions, data = mergedNEIandSCC,
