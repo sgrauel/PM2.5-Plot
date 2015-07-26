@@ -19,7 +19,7 @@ makePlot4 <- function() {
   
   plt <- qplot(year, Emissions, data = mergedNEIandSCC,
                geom="bar", stat = "identity",
-               ylab = expression("PM"[2.5]*" (Tons)"), xlab = "Years", colour = EI.Sector, main = expression("US PM"[2.5]*" Emissions from Coal Combustion Related Sources (1999 - 2008)")) + theme_bw(base_family = "merriweather", base_size = 12)
+               ylab = expression("PM"[2.5]*" (Tons)"), xlab = "Years", colour = EI.Sector, main = expression("PM"[2.5]*" from US Coal Combustion Sources (1999 - 2008)")) + theme_bw(base_family = "merriweather", base_size = 12)
   
   ggsave(filename = "./plot4.png")
 }
