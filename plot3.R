@@ -18,7 +18,8 @@ makePlot3 <- function() {
   
   plt <- qplot(year, Emissions, data = baltimoreSources,
                geom="bar", stat = "identity",
-               ylab = "PM2.5 (Tons)", xlab = "Years", facets = .~type)
+               ylab = expression("PM"[2.5]*" (Tons)"), xlab = "Years", 
+               facets = .~type, fill = type, main = expression("4 Types of PM"[2.5]*" Polluters in the Baltimore City, Maryland Area (1999 - 2008)")) + theme_bw(base_family = "merriweather", base_size = 12)
   
   ggsave(filename = "./plot3.png")
   
