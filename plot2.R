@@ -26,13 +26,15 @@ makePlot2 <- function() {
   png("./plot2.png", width=480, height=480)
   
   # initialize line plot
-  with(baltimoreSources, plot(year,Emissions,
-                 type = "l", xlab = "Years", ylab = "PM2.5 (Tons)", yaxt = "n", xaxt = "n"))
+  # with(baltimoreSources, plot(year,Emissions,
+                 # type = "l", xlab = "Years", ylab = "PM2.5 (Tons)", yaxt = "n", xaxt = "n"))
+  
+  bp <- barplot(baltimoreSources[[2]], col = "orange", xlab = "Years", ylab = expression("PM"[2.5]*" (Tons)"), axisnames = TRUE, names.arg = baltimoreSources[[1]])
+  points(x = bp, y = baltimoreSources[[2]], pch = 20, col = "red")
+  lines(x = bp, y = baltimoreSources[[2]])
   
   # give basic annotation
-  title(main = "Baltimore City's Emissions of PM2.5 Over a Decade (1999 - 2008)")
-  axis(1, at=c(1999,2002,2005,2008))
-  axis(2, at=c(3500,3000,2500,2000,1500))
+  title(main = expression("Baltimore City's Emissions of PM"[2.5]*" Over a Decade (1999 - 2008)"))
   
   dev.off()
   
